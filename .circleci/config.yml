@@ -326,14 +326,6 @@ jobs:
       - install_awscli
       - install_nodejs
       - run:
-          name: Install dependencies
-          command: |
-            # your code here
-      - run:
-          name: Get backend url
-          command: |
-            # your code here
-      - run:
           name: Backend smoke test.
           command: |
             export BACKEND_IP=$(aws ec2 describe-instances \
@@ -356,9 +348,9 @@ jobs:
             if curl -s ${URL} | grep "Welcome"
             then
                 
-              exit 0
-            else
               exit 1
+            else
+              exit 2
             fi
       - destroy-environment
       - revert-migrations
