@@ -1,5 +1,6 @@
 test.txt
 udacity.pem
+prometheus-server-key.pem
 new_user_credentials.csv
 *~
 *.sw[mnpcod]
